@@ -25,7 +25,7 @@ Sistema de gerenciamento de carteiras de criptomoedas chamado **CryptoWallet Pro
 - `nome`: Nome completo da moeda
 - `simbolo`: Abreviação (ex: BTC)
 
-### Tabela `Transção`
+### Tabela `Transação`
 - `transacao_id`: ID da transação (PK)
 - `carteira_id`: FK da carteira
 - `cripto_id`: FK da criptomoeda
