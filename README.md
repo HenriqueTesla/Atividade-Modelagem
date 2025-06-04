@@ -80,6 +80,9 @@ GROUP BY c.cripto_id;
 
 ---
 
-Autor Henrique Paulino  
+Membros Grupo:  
+Henrique Paulino Dayrell Capanema  
+Pedro Henrique Pedrotti Kendziescki  
+Bernardo de Paula Dias  
 Curso: Análise e Desenvolvimento de Sistemas  
 UniBH – 2025  
