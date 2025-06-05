@@ -44,6 +44,7 @@ Sistema de gerenciamento de carteiras de criptomoedas chamado **CryptoWallet Pro
 5. Veja os resultados e consultas funcionando!
 
 📎 **Link para o DB Fiddle**:  
+https://www.db-fiddle.com/f/hte247qnHtijdHVrMCrVeH/5
 
 ---
 
