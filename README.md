@@ -44,14 +44,13 @@ Sistema de gerenciamento de carteiras de criptomoedas chamado **CryptoWallet Pro
 5. Veja os resultados e consultas funcionando!
 
 📎 **Link para o DB Fiddle**:  
-https://www.db-fiddle.com/f/hte247qnHtijdHVrMCrVeH/5
+https://www.db-fiddle.com/f/hte247qnHtijdHVrMCrVeH/8
 
 ---
 
 ## Consultas de Verificação
 
 ### A) Transações da Ana Silva
-
 ```sql
 SELECT t.data_transacao, c.simbolo, t.quantidade, t.valor_total
 FROM Transacao AS t
@@ -61,24 +60,41 @@ JOIN Criptomoeda AS c ON t.cripto_id = c.cripto_id
 WHERE u.usuario_id = 1
 ORDER BY t.data_transacao;
 ```
-
-### B) Total investido por Carteira
-
+### B) Total Investido por Carteira
 ```sql
 SELECT w.nome AS carteira, SUM(t.valor_total) AS total_investido
 FROM Transacao AS t
 JOIN Carteira AS w ON t.carteira_id = w.carteira_id
 GROUP BY w.carteira_id;
 ```
-### C) Quantidade total de cada Criptomoeda
-
+### C) Quantidade Total de Cada Criptomoeda
 ```sql
 SELECT c.simbolo, SUM(t.quantidade) AS total_quantidade
 FROM Transacao AS t
 JOIN Criptomoeda AS c ON t.cripto_id = c.cripto_id
 GROUP BY c.cripto_id;
 ```
-
+### D) Dados de Criação e Nome do Usuário com ID = 2
+```sql
+SELECT criado_em, nome
+FROM Usuario
+WHERE usuario_id = 2;
+```
+### E) Nome e Data de Criação do Usuário + Valor Total das Transações (Usuário ID = 1)
+```sql
+SELECT u.nome, u.criado_em, t.valor_total
+FROM Transacao AS t
+JOIN Carteira AS w ON t.carteira_id = w.carteira_id
+JOIN Usuario AS u ON w.usuario_id = u.usuario_id
+WHERE u.usuario_id = 1;
+```
+### F) Informações do Usuário e Suas Carteiras (Usuário ID = 1)
+```sql
+SELECT w.carteira_id, u.nome, u.email, u.criado_em, w.nome
+FROM Carteira AS w
+JOIN Usuario AS u ON w.usuario_id = u.usuario_id
+WHERE u.usuario_id = 1;
+```
 ---
 
 Membros Grupo:  
